@@ -40,25 +40,23 @@ def sacar():
 
 def emitir_extrato():
     global extrato_bancario, saldo_conta
-    
     print('\n********* Extrato Bancário **********\n')
-    
+
     if len(extrato_bancario) == 0:
         print('Não foram realizadas movimentações')
     else:
         for item in extrato_bancario:
             print(item)
         print(f'Saldo R$ {saldo_conta:.2f}')
-    
+
     print('\n*************************************\n')
     
-
 def main():
     os_clear_command = 'nt' if os.name ==  'cls' else 'clear'
     os.system(os_clear_command)
     operacao = 'Z'
+    
     while operacao not in 'xX':
-
         print(f'"S" para SAQUE\n"D" para DEPÓSITO\n"E" para EXTRATO\n"X" para SAIR')
         operacao = input('Informe a operação desejada: ')
 
